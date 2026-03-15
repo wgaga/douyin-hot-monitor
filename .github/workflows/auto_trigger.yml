@@ -1,8 +1,20 @@
-curl -X POST "https://api.coze.cn/v1/workflows/run" \
--H "Authorization: Bearer pat_Pa7svcR5kImlRC2ksDkRVkx3Oly71kUR0rHyJcCjMrRWHv6H9u1WifWJxuIgHOOL" \
--H "Content-Type: application/json" \
--d '{
-  "workflow_id": "7624589607500769320",
-  "app_id": "7624589607500769320",
-  "parameters": {"input": "抖音爆款监控自动触发"}
-}'
+name: 抖音爆款监控-定时触发
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  trigger-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 调用扣子工作流API
+        run: |
+          curl -X POST "https://api.coze.cn/v1/workflows/run" \
+          -H "Authorization: Bearer pat_Pa7svcR5kImlRC2ksDkRVkx301y71kUR0rHyJcCjMrRWHv6H9u1WifWJxuIgHOOL" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "workflow_id": "7624589607500769320",
+            "app_id": "7624589607500769320",
+            "parameters": {"input": "抖音爆款监控自动触发"}
+          }'
