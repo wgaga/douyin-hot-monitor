@@ -11,7 +11,7 @@ jobs:
       - name: 调用扣子工作流API
         run: |
           curl -X POST "https://api.coze.cn/v1/workflows/run" \
-          -H "Authorization: Bearer pat_Pa7svcR5kImlRC2ksDkRVkx301y71kUR0rHyJcCjMrRWHv6H9u1WifWJxuIgHOOL" \
+          -H "Authorization: Bearer pat_7mTGSsJlS05ktT0XlwkXhCEe2em3Ce0u0rPK7A7OtHMZkmk4bUV9CURoNWyf5xML" \
           -H "Content-Type: application/json" \
           -d '{
             "workflow_id": "7624589607500769320",
